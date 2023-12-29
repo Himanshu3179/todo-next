@@ -19,6 +19,7 @@
     "javascript-time-ago": "^2.5.9",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
+    "query-string": "^8.1.0",
     "react": "^18",
     "react-calendar": "^4.7.0",
     "react-dom": "^18",

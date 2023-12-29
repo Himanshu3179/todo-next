@@ -12,7 +12,6 @@ import Link from "../components/Link"
 
 interface todos {
     todos: Todo[]
-    sortOrder: string
 }
 TimeAgo.addDefaultLocale(en)
 
@@ -21,27 +20,12 @@ export default function AllTodos({ todos }: todos) {
 
     if (todos.length === 0) {
         return (
-            <div className="w-full bg-gray-50  rounded-lg shadow-lg border border-gray-200
-            md:table 
-            ">
-                <div className="hidden md:table-row bg-gray-200">
-                    <div className="hidden md:table-cell p-2 font-bold flex-grow">Title</div>
-                    <div className="hidden md:table-cell p-2 font-bold flex-grow text-center">Status</div>
-                    <div className="hidden md:table-cell p-2 font-bold flex-grow ">Created At</div>
-                </div>
-                <div className="border-b border-gray-200 md:table-row hover:bg-gray-100">
-                    <div className="block md:hidden p-2">
-                        <div className="text-gray-900 mb-2 text-lg ">No Todos Found</div>
-                    </div>
-                    <div className="hidden md:table-cell p-2 flex-grow ">
-                        No Todos Found
-                    </div>
-                    <div className="hidden md:table-cell p-2 flex-grow">
-                        No Todos Found
-                    </div>
-                    <div className="hidden md:table-cell p-2 flex-grow">No Todos Found</div>
-                </div>
+            <div className="w-full text-center">
+                <h1 className="bg-bold">
+                    No todos found
+                </h1>
             </div>
+
         )
     }
 
