@@ -26,6 +26,7 @@ const Todos = async ({ searchParams }: Props) => {
     }
 
 
+
     const todos = await prisma.todo.findMany({
         where:
         {
@@ -34,7 +35,7 @@ const Todos = async ({ searchParams }: Props) => {
         },
         orderBy: { createdAt: 'desc' }
     })
-
+    console.log(todos);
     return (
         <div className='px-5 pt-5 flex md:flex-row-reverse flex-col gap-4 w-screen '>
             <div className="flex flex-col items-center gap-5 w-full  
