@@ -57,13 +57,10 @@ const TodoForm = () => {
             <form onSubmit={handleSubmit(onSubmit)}
                 className='flex gap-2 w-full '
             >
-                <TextField.Root className='w-full shadow-md' size={'3'}>
-                    <TextField.Input placeholder="Create a new todo..."
-
-                        className='w-fit'
-                        {...register('title')}
-                    />
-                </TextField.Root>
+                <input className='w-full shadow-md rounded-lg px-3 outline-none border border-gray-400'
+                    placeholder="Create a new todo..."
+                    {...register('title')}
+                />
                 <input type="hidden" {...register('userId')}
                     defaultValue={userId}
                 />
@@ -72,7 +69,7 @@ const TodoForm = () => {
                     Add
                 </button>
 
-            </form>
+            </form >
             {
                 errors.title && <p className='text-red-500 italic underline'>*{errors.title?.message}</p>
             }
