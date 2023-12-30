@@ -2,25 +2,29 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
+import SignInButton from './SignInButton'
 const Header = () => {
     const session = useSession()
     const status = session.status
     return (
-        <div className='flex justify-between p-3 bg-gray-200 w-full fixed top-0 z-50'>
-            <Link href="/">Todo App</Link>
+        <div className='flex justify-between p-3 bg-gray-200 w-full fixed top-0 z-50 items-center'>
+            <Link href="/"
+                className='text-2xl font-bold text-red-600 hover:text-red-500'
+            >Todo App</Link>
             {status === 'authenticated' && (
                 <p className="text-blue-600" >{session?.data?.user?.name}</p>
             )}
             {status === 'authenticated' && (
-                <button onClick={() => signOut()}>Sign Out</button>
+                <button
+                    className='bg-white rounded-full border px-4 py-1 shadow-md'
+                    onClick={() => signOut()}>Sign Out</button>
             )}
             {status === 'unauthenticated' && (
-                <button onClick={() => signIn(
-                    'google',
-                    { callbackUrl: 'http://localhost:3000/' }
-                )}>Sign In</button>
+                <SignInButton className='bg-white rounded-full border px-4 py-1 shadow-md'>
+                    Sign In
+                </SignInButton >
             )}
-        </div>
+        </div >
     )
 }
 

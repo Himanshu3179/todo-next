@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className=''>
+    <main className='h-screen flex justify-center items-center'>
       <Link href={'/todos'}>
-        <Button>Todos</Button>
+        <Button size={"3"}>Todos</Button>
       </Link>
     </main>
   )

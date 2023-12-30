@@ -51,15 +51,14 @@ const TodoForm = () => {
         reset();
         router.refresh();
     }
-
     return (
-        <>
+        <   >
 
             <form onSubmit={handleSubmit(onSubmit)}
                 className='flex gap-2 w-full '
             >
                 <TextField.Root className='w-full shadow-md' size={'3'}>
-                    <TextField.Input placeholder="Enter your email"
+                    <TextField.Input placeholder="Create a new todo..."
 
                         className='w-fit'
                         {...register('title')}
@@ -68,9 +67,10 @@ const TodoForm = () => {
                 <input type="hidden" {...register('userId')}
                     defaultValue={userId}
                 />
-                <Button type='submit' size={"3"} className='shadow-lg'>
+                <button type='submit'
+                    className='bg-blue-600 px-3 py-2 text-white font-semibold shadow-lg rounded-md border '>
                     Add
-                </Button>
+                </button>
 
             </form>
             {

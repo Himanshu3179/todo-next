@@ -25,7 +25,7 @@ export default function RootLayout({
         <AuthProvider>
           <Theme>
             <Header />
-            <main className=' h-screen pt-12'>
+            <main className=' h-screen '>
               {children}
             </main>
             <Toaster />
