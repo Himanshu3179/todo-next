@@ -58,7 +58,7 @@ export default function EditForm({ todo }: { todo: Todo }) {
     }
 
     return (
-        <div className='flex flex-col items-center gap-5 py-10 px-5 max-w-xl m-auto rounded-lg border mt-10 '>
+        <div className='flex flex-col items-center gap-5 py-10  px-5 max-w-xl m-auto rounded-lg border mt-16 '>
             <form onSubmit={handleSubmit(onSubmit)} className=' w-full flex flex-col'>
                 <p className='font-bold mb-2'>Title</p>
                 <input {...register('title', { required: true })}
@@ -85,9 +85,11 @@ export default function EditForm({ todo }: { todo: Todo }) {
                     *{errors.status.message}
                 </p>}
 
-                <Button mt="5" type="submit">
+                <button
+                    className='mt-5 bg-blue-600 text-white rounded-md px-5 py-1 hover:bg-blue-700   '
+                    type="submit">
                     Update
-                </Button>
+                </button>
 
 
             </form>

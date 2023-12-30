@@ -34,6 +34,7 @@ export default function AllTodos({ todos }: todos) {
         md:table 
         ">
             <div className="hidden md:table-row bg-gray-200">
+
                 <div className="hidden md:table-cell p-2 font-bold flex-grow">Title</div>
                 <div className="hidden md:table-cell p-2 font-bold flex-grow text-center">Status</div>
                 <div className="hidden md:table-cell p-2 font-bold flex-grow ">Created At</div>
@@ -41,7 +42,11 @@ export default function AllTodos({ todos }: todos) {
             {todos.map(todo => (
                 <div key={todo.id} className="border-b border-gray-200 md:table-row hover:bg-gray-100">
                     <div className="block md:hidden p-2">
-                        <div className="text-gray-900 mb-2 text-lg ">{todo.title}</div>
+                        <div className="text-gray-900 mb-2 text-lg ">
+                            <Link href={`/todos/${todo.id}`}>
+                                {todo.title}
+                            </Link>
+                        </div>
                         <div className="flex justify-between">
                             <TodoStatusBadge todo={todo} />
                             <div className="text-sm ">{timeAgo.format(new Date(todo.createdAt))}</div>

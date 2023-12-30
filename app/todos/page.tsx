@@ -25,7 +25,6 @@ const Todos = async ({ searchParams }: Props) => {
 
     if (!userId) {
         return (<div className="h-screen flex justify-center items-center">
-
             <SignInButton className="rounded-full px-6 py-3 border border-gray-400 shadow-md flex gap-3 items-center">
                 <Image src="/google.png" width={20} height={20} alt="google" />
                 <p>
@@ -46,13 +45,10 @@ const Todos = async ({ searchParams }: Props) => {
         orderBy: { createdAt: 'desc' }
     })
     return (
-        <div className='px-5 flex md:flex-row-reverse flex-col gap-4 w-screen pt-20'>
-            <div className="flex flex-col items-center gap-5 w-full  
-            ">
-                <TodoForm />
-                <SelectStatus />
-                <AllTodos todos={todos} />
-            </div>
+        <div className='px-5 flex flex-col pt-20 items-center gap-5'>
+            <TodoForm />
+            <SelectStatus />
+            <AllTodos todos={todos} />
         </div>
     )
 

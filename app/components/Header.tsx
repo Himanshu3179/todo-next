@@ -12,7 +12,9 @@ const Header = () => {
                 className='text-2xl font-bold text-red-600 hover:text-red-500'
             >Todo App</Link>
             {status === 'authenticated' && (
-                <p className="text-blue-600" >{session?.data?.user?.name}</p>
+                <p className="text-blue-600 hidden 
+                md:block
+                " >{session?.data?.user?.name}</p>
             )}
             {status === 'authenticated' && (
                 <button
