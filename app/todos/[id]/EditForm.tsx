@@ -71,6 +71,20 @@ export default function EditForm({ todo }: { todo: Todo }) {
                 '>
                     *{errors.title.message}
                 </p>}
+                {/* description */}
+                <p className='font-bold mt-5'>Description</p>
+                <textarea {...register('description', { required: true })}
+                    className='border border-gray-300 p-2 outline-none w-full 
+                    bg-gray-100/50 rounded-md'
+                    rows={5}
+                    defaultValue={todo.description ?? ""}
+                />
+                {errors.description && <p className='
+                    text-red-500 italic
+                '>
+                    *{errors.description.message}
+                </p>}
+
                 <p className='font-bold mt-5'>Status</p>
                 <select {...register('status', { required: true })} className="block w-full px-2 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                     defaultValue={todo.status}
